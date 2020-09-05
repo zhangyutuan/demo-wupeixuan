@@ -22,8 +22,8 @@ public class MailController {
      */
     @GetMapping("/sendSimpleMail")
     public void sendSimpleMail() {
-        mailService.sendSimpleMail("wupx@qq.com",
-                "huxy@qq.com",
+        mailService.sendSimpleMail("1203576897@qq.com",
+                "3247382300@qq.com",
                 "欢迎关注微信公众号「武培轩」",
                 "感谢你这么可爱，这么优秀，还来关注我，关注了就要一起成长哦~~回复【资料】领取优质资源！");
     }
@@ -33,9 +33,9 @@ public class MailController {
      */
     @GetMapping("/sendMimeMail")
     public ResponseEntity<String> sendMimeMail() {
-        return mailService.sendMimeMail("wupx@qq.com",
-                "huxy@qq.com",
-                "欢迎关注微信公众号「武培轩」",
+        return mailService.sendMimeMail("1203576897@qq.com",
+                "3247382300@qq.com",
+                "欢迎关注微信公众号「张玉湍」",
                 "<h3>感谢你这么可爱，这么优秀，还来关注我，关注了就要一起成长哦~~</h3><br>" +
                         "回复【资料】领取优质资源！<br>" +
                         "<img src='cid:logo'>");
@@ -50,9 +50,9 @@ public class MailController {
     @GetMapping("/sendTemplateMail")
     public ResponseEntity<String> sendTemplateMail() {
         Context context = new Context();
-        context.setVariable("username", "武培轩");
-        return mailService.sendTemplateMail("wupx@qq.com",
-                "huxy@qq.com",
+        context.setVariable("username", "张玉湍");
+        return mailService.sendTemplateMail("1203576897@qq.com",
+                "3247382300@qq.com",
                 "欢迎关注微信公众号「武培轩」",
                 context);
     }
