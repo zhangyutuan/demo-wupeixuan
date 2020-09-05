@@ -88,6 +88,7 @@ public class MailService {
     public ResponseEntity<String> sendTemplateMail(String from, String to, String subject, Context context) {
         MimeMessage message = javaMailSender.createMimeMessage();
         try {
+
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
             helper.setFrom(from);
             helper.setTo(to);
